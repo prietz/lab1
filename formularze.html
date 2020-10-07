@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+  <head>
+      <meta charset="utf-8">
+			<title>Problemy</title>
+      <link rel="stylesheet" href="styl.css" media="screen">
+  <script>
+  function wybrane()
+  {
+  var d=document.getElementById("select");
+  var wyswietl=d.options[d.selectedIndex].text;
+  document.getElementById("txtvalue").value=wyswietl;
+  }
+  </script>
+  </head>
+  <body>
+<div id="menu">
+<a href="trycatch.html">Konstrukcja try-catch</a>
+<a href="math.html">Obiekt Math</a>
+<a href="formularze.html">Operacje na polach select formularza</a>
+<a href="przyklad.html">Połączenie zagadnień</a>
+</div>
+<h1>Operacje na polach select formularza (obiekty Select i Option)</h1>
+<p> Formularze stanowią silną bazę do interakcji z użytkownikiem.</p>
+
+<h2>Select i Option</h2>
+ 
+ <p>Do stworzenia listy wyboru używamy znacznika "<b>select</b>". 
+ Poszczególne opcje, możliwe do wyboru na liście, to znaczniki "<b>option</b>".</p>
+<h2> Skrypt JS </h2>
+<p> Podana poniżej funkcja, jest odpowiedzialna, aby przy zmianie opcji formularza, pobrać jej zawartość a następnie wyświetlić w oknie obok.</p>
+<textarea name="nazwa" cols="70" rows="15">
+
+  <script>
+  function wybrane()
+  {
+  var d=document.getElementById("select");
+  var wyswietl=d.options[d.selectedIndex].text;
+  document.getElementById("txtvalue").value=wyswietl;
+  }
+  </script>
+
+</textarea>
+
+<h2> Formularz </h2>
+<p> Tworząc formularz powinniśmy pamiętać aby nadać mu nazwę oraz ID selectu. Atrybut "onchange" odpowiada za wywołanie funkcji przy zmianie opcji </p>
+<textarea name="nazwa" cols="70" rows="15">
+
+<form name="Math">
+   <select id="select" onchange="wybrane();">
+      <option>Stała Eulera</option>
+      <option>Logarytm naturalny z 2</option>
+      <option>Liczba pi</option>
+      <option>Pierwiastek kwadratowy z 2</option>
+   </select>
+   <input type="text" id="txtvalue"/>
+</form>
+
+</textarea>
+
+<h2> Formularz </h2>
+
+<form name="Math">
+   <select id="select" onchange="wybrane();">
+      <option>Stała Eulera</option>
+      <option>Logarytm naturalny z 2</option>
+      <option>Liczba pi</option>
+      <option>Pierwiastek kwadratowy z 2</option>
+   </select>
+   <input type="text" id="txtvalue"/>
+</form>
+
+
+
+</body>
+</html>
+
+
+

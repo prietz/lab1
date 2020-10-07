@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>Try-catch</title>
+<link rel="stylesheet" href="styl.css" media="screen">
+<script>
+
+
+function calc(){
+var n1 = parseFloat(document.getElementById("n1").value)
+var op = document.getElementById("opr").value
+if(op === "PI"){
+document.getElementById('wynik').value = Math.round(n1*(Math.PI));
+}
+if(op === "E"){
+document.getElementById('wynik').value = Math.round(n1*(Math.E));
+}
+
+
+
+  var message, x;
+  message = document.getElementById("message");
+  message.innerHTML = "";
+  x = document.getElementById("n1").value;
+  try { 
+    if(x == "")  throw "Pusto";
+    if(isNaN(x)) throw "Nie jest liczbą";
+  }
+  catch(err) {
+    message.innerHTML = "Input " + err;
+  }
+}
+
+
+</script>
+
+</head>
+<body>
+
+<div id="menu">
+<a href="trycatch.html">Konstrukcja try-catch</a>
+<a href="math.html">Obiekt Math</a>
+<a href="formularze.html">Operacje na polach select formularza</a>
+<a href="przyklad.html">Połączenie zagadnień</a>
+</div>
+<h1> Przykład łączący zagadnienia </h1>
+<ul>
+<li>konstrukcja try-catch</li>
+<li>obiekt Math - zaokrąglanie liczb, stała PI i E</li>
+<li>operacje na polach select formularza (obiekty Select i Option)</li>
+</ul>
+
+
+Liczba do pomnożenia: &nbsp;<input type = "text" id = "n1" value = "0.0">
+<br><br>
+<p id="message"></p>
+
+
+Przez co pomnożyć?:&nbsp; <select id = "opr">
+	<option value = "PI">PI</option>
+	<option value = "E">E</option>
+
+</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type = "Button" value = "=" onclick="calc();">
+<br>
+<br>
+Wynik (Zaokrąglony): <input type = "text" id = "wynik"><br><br>
+
+
+
+
+<textarea name="nazwa" cols="100" rows="10">
+Liczba do pomnożenia: &nbsp;<input type = "text" id = "n1" value = "0.0">
+<br><br>
+<p id="message"></p>
+
+
+Przez co pomnożyć?:&nbsp; <select id = "opr">
+	<option value = "PI">PI</option>
+	<option value = "E">E</option>
+
+</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type = "Button" value = "=" onclick="calc();">
+<br>
+<br>
+Wynik (Zaokrąglony): <input type = "text" id = "wynik"><br><br>
+</textarea>
+<p>W powyższym kodzie stworzono pola na wpisanie liczby, która zostnaie pomnożona przez wybraną z listy opcję, oraz pole na wynik</p>
+
+<textarea name="nazwa" cols="100" rows="10">
+<script type = "text/javascript">
+
+
+function calc(){
+var n1 = parseFloat(document.getElementById("n1").value)
+var op = document.getElementById("opr").value
+if(op === "PI"){
+document.getElementById('wynik').value = Math.round(n1*(Math.PI));
+}
+if(op === "E"){
+document.getElementById('wynik').value = Math.round(n1*(Math.E));
+}
+
+
+
+  var message, x;
+  message = document.getElementById("message");
+  message.innerHTML = "";
+  x = document.getElementById("n1").value;
+  try { 
+    if(x == "")  throw "Pusto";
+    if(isNaN(x)) throw "Nie jest liczbą";
+  }
+  catch(err) {
+    message.innerHTML = "Input " + err;
+  }
+}
+
+
+</script>
+</textarea>
+<p>Powyższe funkcje są odpowiedzialne następująco za pobranie wartości z pola na liczbę, wybrania przez co ma zostać pomnożona a następnie wskazania gdzie ma zostać wpisany wynik. Wynik dodatkowo jest zaokrąglany.</p>
+<p>Funkcja za pomocą konstrukcji try-catch, testuje czy w polu na liczbę znajduje się liczba</p>
+
+
+</body>
+</html>

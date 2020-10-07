@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<title>try-catch</title>
+<link rel="stylesheet" href="styl.css" media="screen">
+</head>
+<body>
+
+<script>
+try {
+document.write(sayHello());
+document.write("This line will not be executed");
+}
+catch (e) {
+document.write("Message = " + e.message + "<br/>");
+document.write("Description = " + e.description + "<br/>");
+document.write("Message = " + e.stack + "<br/>");
+}
+document.write("This line will be executed <br/>");
+</script>
+</body>
+</html>

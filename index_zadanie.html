@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>Try-catch</title>
+<link rel="stylesheet" href="styl.css" media="screen">
+  </head>
+  <body>
+<div id="menu">
+<a href="trycatch.html">Konstrukcja try-catch</a>
+<a href="math.html">Obiekt Math</a>
+<a href="formularze.html">Operacje na polach select formularza</a>
+<a href="przyklad.html">Połączenie zagadnień</a>
+</div>
+<h1> Try-catch </h1>
+<h2> Obsługa wyjątków </h2>
+<p>Jeśli tworzymy dany program, należałoby go testować na każdym etapie tworzenia, im wcześniej
+zostanie wykryty błąd tym lepiej dla oprogramowania.<br />
+Jedną z konstrukcji do obsługi wyjątków jest 
+<span>Konstrukcja try-catch.</span><br />
+Konstrukcja tego typu występuje w wielu językach obiektowych, a służy do obsługi wyjątków.<br />
+Instrukcja try-catch zawiera blok try, w którym znajduje się jedna bądź więcej instrukcji i zero lub więcej bloków <br />
+catch określających zachowanie programu w przypadku napotkania w bloku try jakiegoś wyjątku. <br />
+Blok try testuje nie tylko bezpośrednio wywołane instrukcje, ale cały stos wywołań użytych funkcji.<br />
+
+W skrócie:<br />
+
+W bloku <span>try</span> umieszczamy kod, którego działanie może zakończyć się w nieprzewidywalny sposób.
+W bloku <span>catch</span> umieścimy kod obsługi wyjątku, który tu przechwycimy.
+</p>
+
+
+<h2>Podstawowe użycie try-catch w celu obsługi wyjątku:</h2>
+<textarea name="nazwa" cols="50" rows="13">
+ try {
+    window.nonExistentFunction();
+    alert("Metoda wykonana.");
+} catch (oException) {
+    alert("Wystąpił wyjątek: " + oException.message);
+} finally {
+    alert("Koniec instrukcji try… catch");
+}
+</textarea>
+
+
+
+<h2> Przykład w przeglądarce </h2>
+<textarea name="nazwa" cols="50" rows="13">
+<script type="text/javascript">
+try {
+document.write(sayHello());
+document.write("This line will not be executed");
+}
+catch (e) {
+document.write("Message = " + e.message + "<br/>");
+document.write("Description = " + e.description + "<br/>");
+document.write("Message = " + e.stack + "<br/>");
+}
+document.write("This line will be executed <br/>");
+</script>
+</textarea>
+<a href="https://orka.umg.edu.pl/~s45067/TI/Praca2/trycatch1.html" target="_blank"> Rezultat </a>
+
+</body>
+</html>
